@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Edit Task </h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" value="{{ task.title }}">
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
