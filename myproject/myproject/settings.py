@@ -25,11 +25,9 @@ SECRET_KEY = 'django-insecure-nx%gz5bk(q=6m5#=tww&=w!ye#)d1_7$43v@ws#==_t9ym7syz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'task-manager-nv4h.onrender.com',
-    'localhost',
-    '127.0.0.1'
-]
+import os
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
 
 # Application definition
